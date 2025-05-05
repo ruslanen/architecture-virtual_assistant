@@ -11,10 +11,25 @@ rules:
       - intent: goodbye
       - action: utter_goodbye
 
-  - rule: Answer architecture questions
+  - rule: Ответ про микросервисы
     steps:
-      - intent: ask_architecture
-      - action: utter_architecture_response
+      - intent: ask_microservices
+      - action: utter_microservices
+
+  - rule: Ответ про монолит
+    steps:
+      - intent: ask_monolith
+      - action: utter_monolith
+
+  - rule: Ответ про serverless
+    steps:
+      - intent: ask_serverless
+      - action: utter_serverless
+
+  - rule: Ответ про событийную архитектуру
+    steps:
+      - intent: ask_event_arch
+      - action: utter_event_arch
 
   - rule: Request additional information
     steps:
