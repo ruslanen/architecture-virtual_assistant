@@ -1,0 +1,55 @@
+version: '3.1'
+intents:
+- affirm
+- ask_event_arch
+- ask_microservices
+- ask_monolith
+- ask_serverless
+- deny
+- goodbye
+- greet
+- inform
+- request_info
+responses:
+  utter_greet:
+  - text: Привет! Чем могу помочь в области архитектуры программного обеспечения?
+  utter_goodbye:
+  - text: До свидания! Если появятся вопросы по архитектуре ПО, обращайтесь.
+  utter_ask_more:
+  - text: Что именно вас интересует в архитектуре программного обеспечения?
+  utter_acknowledge:
+  - text: Понял, расскажите подробнее о вашем проекте или задачах.
+  utter_microservices:
+  - text: |
+      Микросервисы — это подход, при котором приложение разбивается на независимые модули. 
+      Каждый модуль — это самостоятельный сервис с собственной логикой и базой данных. 
+      Это даёт гибкость и возможность масштабировать отдельные части системы.
+  utter_monolith:
+  - text: |
+      Монолит — это архитектура, где всё приложение — единое целое. 
+      Подходит для простых проектов, но со временем становится трудно масштабируемой и изменяемой системой.
+  utter_serverless:
+  - text: |
+      Serverless позволяет запускать функции без управления серверами. 
+      Это удобно для автоматических событий и снижения затрат, но требует продуманного дизайна.
+  utter_event_arch:
+  - text: |
+      Событийная архитектура использует сообщения и события для связи между компонентами. 
+      Это облегчает асинхронность и масштабируемость в распределённых системах.
+entities:
+- topic
+slots:
+  topic:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_goodbye
+- utter_greet
+- utter_monolith
+- utter_microservices
+- utter_serverless

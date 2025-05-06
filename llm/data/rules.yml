@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+  - rule: Say hello
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Ответ про микросервисы
+    steps:
+      - intent: ask_microservices
+      - action: utter_microservices
+
+  - rule: Ответ про монолит
+    steps:
+      - intent: ask_monolith
+      - action: utter_monolith
+
+  - rule: Ответ про serverless
+    steps:
+      - intent: ask_serverless
+      - action: utter_serverless
+
+  - rule: Ответ про событийную архитектуру
+    steps:
+      - intent: ask_event_arch
+      - action: utter_event_arch
+
+  - rule: Request additional information
+    steps:
+      - intent: request_info
+      - action: utter_ask_more

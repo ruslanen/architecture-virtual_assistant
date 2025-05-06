@@ -1,0 +1,26 @@
+version: "3.1"
+
+stories:
+  - story: greet and ask monolith
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_monolith
+      - action: utter_monolith
+
+  - story: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: ask for more info
+    steps:
+      - intent: request_info
+      - action: utter_ask_more
+
+  - story: interactive_story_1
+    steps:
+    - intent: goodbye
+    - slot_was_set:
+      - topic: Прощай
+    - action: utter_goodbye
